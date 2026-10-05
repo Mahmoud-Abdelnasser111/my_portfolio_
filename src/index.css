@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+  --color-dark-bg: #030712;
+  --color-dark-surface: #05070D;
+  --color-deep-navy: #071426;
+  --color-neon-blue: #00A8FF;
+  --color-electric-cyan: #00E5FF;
+  --color-bright-blue: #1687FF;
+  --color-muted-text: #94A3B8;
+  --color-white-text: #F8FAFC;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: #030712;
+  color: #F8FAFC;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Ensure sections offset for fixed header */
+section[id] {
+  scroll-margin-top: 80px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #030712;
+}
+::-webkit-scrollbar-thumb {
+  background: #071426;
+  border: 1px solid rgba(0, 168, 255, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00A8FF;
+  box-shadow: 0 0 10px #00A8FF;
+}
+
+/* Circuit grid patterns */
+.circuit-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 168, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 168, 255, 0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.circuit-grid-dense {
+  background-image: 
+    linear-gradient(to right, rgba(0, 229, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 229, 255, 0.06) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+.circuit-dots {
+  background-image: radial-gradient(rgba(0, 168, 255, 0.15) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Neon Glow utilities */
+.neon-glow-sm {
+  box-shadow: 0 0 12px rgba(0, 168, 255, 0.25);
+}
+
+.neon-glow-md {
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.35), 0 0 40px rgba(0, 229, 255, 0.15);
+}
+
+.neon-glow-cyan {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.35);
+}
+
+.neon-border {
+  border: 1px solid rgba(0, 168, 255, 0.25);
+}
+
+.neon-border:hover {
+  border-color: rgba(0, 229, 255, 0.6);
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.25);
+}
+
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 168, 255, 0.6), 0 0 20px rgba(0, 229, 255, 0.3);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.7);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
